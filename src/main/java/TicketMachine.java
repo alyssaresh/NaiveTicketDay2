@@ -24,6 +24,7 @@ public class TicketMachine {
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
+    //constructor
     public TicketMachine(Integer ticketCost) {
         price = ticketCost;
         balance = 0;
@@ -87,4 +88,33 @@ public class TicketMachine {
 
         return "Ticket price: " + price + " cents. " + "Your total is " + total + ".";
     }
+
+        public static void main(String[] args) {
+        TicketMachine ticketMachine1 = new TicketMachine(13);
+        //get ticket price
+        System.out.println(ticketMachine1.getPrice());
+        //insert 5 dollars
+        ticketMachine1.insertMoney(10);
+        //check balance
+        System.out.println(ticketMachine1.getBalance());
+        /*
+        add more money and check balance
+        ticketMachine1.insertMoney(5);
+        System.out.println(ticketMachine1.getBalance());
+        */
+        System.out.println(ticketMachine1.printTicket());
+        //see new balance after ticket prints
+        System.out.println(ticketMachine1.getBalance());
+
+        TicketMachine ticketMachine2 = new TicketMachine(20);
+        System.out.println(ticketMachine2.getPrice());
+        ticketMachine2.insertMoney(10);
+        System.out.println(ticketMachine2.getBalance());
+        System.out.println(ticketMachine2.printTicket());
+        System.out.println(ticketMachine2.getBalance());
+    }
+
 }
+
+//could you use an if statement to get change/not print a ticket?
+
